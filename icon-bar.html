@@ -1,62 +1,65 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <style>
-            body {
-                margin:15px;
-            }
-            .icon-bar {
-                width: 100%;
-                background-color: #555;
-                overflow: auto;
-            }
-            .icon-bar a {
-                float: left;
-                width: 20%;
-                text-align: center;
-                padding: 12px 0;
-                transition: all 0.3s ease;
-                color: white;
-                font-size: 2rem;
-                text-decoration: none;
-            }
-            .icon-bar a:hover:not(.active) {
-                background-color: #000;
-            }
-            .active {
-                background-color: #d04719;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="icon-bar">
-            <a href="#" class="active">
-                <i class="fa fa-home"></i>
-            </a>
-            <a href="#">
-                <i class="fa fa-search"></i>
-            </a>
-            <a href="#">
-                <i class="fa fa-envelope"></i>
-            </a>
-            <a href="#">
-                <i class="fa fa-bell"></i>
-            </a>
-            <a href="#">
-                <i class="fa fa-user"></i>
-            </a>
-        </div>
-        <script>
-            const icons = document.querySelectorAll('.icon-bar a');
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Icon Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 15px;
+        }
+        .icon-bar {
+            width: 100%;
+            background-color: #555;
+            overflow: auto;
+        }
+        .icon-bar a {
+            float: left;
+            width: 20%;
+            text-align: center;
+            padding: 12px 0;
+            color: #fff;
+            font-size: 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .icon-bar a:hover:not(.active) {
+            background-color: #000;
+        }
+        .active {
+            background-color: #d04719;
+        }
+    </style>
+</head>
+<body>
+    <div class="icon-bar">
+        <a href="" class="active">
+            <i class="fa fa-home"></i>
+        </a>
+        <a href="">
+            <i class="fa fa-search"></i>
+        </a>
+        <a href="">
+            <i class="fa fa-envelope"></i>
+        </a>
+        <a href="">
+            <i class="fa fa-bell"></i>
+        </a>
+        <a href="">
+            <i class="fa fa-user"></i>
+        </a>
+    </div>
+    <script>
+        const icons = document.querySelectorAll('.icon-bar a');
 
-            icons.forEach(icon => {
-                icon.addEventListener('click', () => {
-                    icons.forEach(i => i.classList.remove('active'));
-                    icon.classList.add('active');
-                });
-            });
-        </script>
-    </body>
+        icons.forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                e.preventDefault();
+                icons.forEach(i => i.classList.remove('active'));
+                icon.classList.add('active');
+            })
+        })
+    </script>
+</body>
 </html>
