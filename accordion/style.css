@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.accordion {
+    margin: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.accordion-item {
+    position: relative;
+}
+.accordion-item::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 0;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-color: #d04719;
+    transition: 0.3s linear;
+}
+.accordion-item.active::before {
+    height: 100%;
+}
+.accordion-item .title {
+    position: relative;
+    padding: 20px;
+    background-color: #efefef;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all .3s ease-in;
+}
+.accordion-item.active .title {
+    border-bottom: 0;
+    background-color: #ddd;
+    color: #d04719;
+    font-weight: bold;
+}
+.accordion-item .title::after {
+    content: '\f078';
+    font-family: "Font Awesome 6 Free";
+    position: absolute;
+    color: #666;
+    right: 20px;
+    top: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all .3s linear;
+}
+.accordion-item.active .title::after {
+    color: #d04719;
+    transform: rotate(180deg);
+}
+.accordion-item .description {
+    padding: 0 20px;
+    background-color: #ddd;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s ease-in;
+}
+.accordion-item.active .description {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.accordion-item:last-child .description,
+.accordion-item:last-child .title {
+    border-bottom: 0;
+}
